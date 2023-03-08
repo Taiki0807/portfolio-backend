@@ -41,8 +41,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'apiv1.apps.Apiv1Config',
     'drf_spectacular',
+    'mdeditor',
+    'blog.apps.BlogConfig'
 ]
-
+X_FRAME_OPTIONS='SAMEORIGIN'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -114,6 +116,13 @@ SPECTACULAR_SETTINGS = {
     'TITLE': 'API一覧',
     'DESCRIPTION': 'Your project description',
     'VERSION': '1.0.0',
+}
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+MDEDITOR_CONFIGS={
+    'default':{
+        'language':'en',
+    }
 }
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
