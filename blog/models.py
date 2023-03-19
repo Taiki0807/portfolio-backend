@@ -21,9 +21,6 @@ class Post(models.Model):
 
     class Meta:
         ordering = ('-created_at',)  # 新しいデータから表示される
-    
-    def get_main_text(self, instance):
-        return markdown.markdown(instance.main_text, extensions=['toc'])
 
     def __str__(self):
         return self.title

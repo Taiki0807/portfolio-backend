@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Category, Post
+import markdown
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -23,3 +24,6 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = '__all__'
+    
+    def get_main_text(self, instance):
+        return markdown.markdown(instance.main_text, extensions=['toc'])
