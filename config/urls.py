@@ -13,6 +13,4 @@ urlpatterns = [
     path('api/blog/',include('blog.urls')),
     path('mdeditor/', include('mdeditor.urls'))
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+urlpatterns += static("/media/", document_root=settings.MEDIA_ROOT)

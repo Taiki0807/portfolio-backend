@@ -117,8 +117,8 @@ SPECTACULAR_SETTINGS = {
     'DESCRIPTION': 'Your project description',
     'VERSION': '1.0.0',
 }
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+MEDIA_URL   = "http://localhost:8000/media/"
+MEDIA_ROOT  = BASE_DIR / "media"
 MDEDITOR_CONFIGS={
     'default':{
         'language':'en',
