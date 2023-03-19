@@ -20,6 +20,7 @@ class SimplePostSerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
     category = CategorySerializer(read_only=True)
+    main_text = serializers.SerializerMethodField()
 
     class Meta:
         model = Post
