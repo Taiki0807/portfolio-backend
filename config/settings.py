@@ -124,6 +124,8 @@ MDEDITOR_CONFIGS={
         'language':'en',
     }
 }
+CSRF_TRUSTED_ORIGINS =['http://34.82.101.16']
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
