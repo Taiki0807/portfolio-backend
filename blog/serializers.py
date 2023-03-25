@@ -2,6 +2,8 @@ from rest_framework import serializers
 from .models import Category, Tag, Post
 import markdown
 from markdown.extensions.toc import TocExtension
+from markdown.extensions.fenced_code import FencedCodeExtension
+import re
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -41,7 +43,8 @@ class PostSerializer(serializers.ModelSerializer):
         return markdown.markdown(main_text, extensions=["extra",'tables'])
     
     def get_toc_text(self, instance):
-        toc_html = markdown.markdown(instance.main_text, extensions=[TocExtension(toc_depth=1)])
+        main_text = re.sub(r'```.*?```', '', instance.main_text, flags=re.DOTALL)
+        toc_html = markdown.markdown(main_text, extensions=[TocExtension(toc_depth=1)])
         toc_start_index = toc_html.find('<ul>')
         toc_end_index = toc_html.rfind('</ul>') + len('</ul>')
         return toc_html[toc_start_index:toc_end_index]
