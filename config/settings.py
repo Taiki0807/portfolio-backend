@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'apiv1.apps.Apiv1Config',
     'drf_spectacular',
     'mdeditor',
-    'blog.apps.BlogConfig'
+    'blog.apps.BlogConfig',
+    'works.apps.WorksConfig'
 ]
 X_FRAME_OPTIONS='SAMEORIGIN'
 MIDDLEWARE = [
