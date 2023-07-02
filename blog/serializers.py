@@ -44,7 +44,7 @@ class PostSerializer(serializers.ModelSerializer):
     
     def get_toc_text(self, instance):
         main_text = re.sub(r'```.*?```', '', instance.main_text, flags=re.DOTALL)
-        toc_html = markdown.markdown(main_text, extensions=[TocExtension(toc_depth=1)])
+        toc_html = markdown.markdown(main_text, extensions=[TocExtension(toc_depth=2), 'markdown.extensions.extra'])
         toc_start_index = toc_html.find('<ul>')
-        toc_end_index = toc_html.rfind('</ul>') + len('</ul>')
+        toc_end_index = toc_html.find('</ul>', toc_start_index) + len('</ul>')
         return toc_html[toc_start_index:toc_end_index]
