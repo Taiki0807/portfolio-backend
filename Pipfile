@@ -10,6 +10,8 @@ psycopg2-binary = "*"
 drf-spectacular = "*"
 pillow = "*"
 django-mdeditor = "*"
+django-storages = "*"
+google-cloud-storage = "*"
 
 [dev-packages]
 
