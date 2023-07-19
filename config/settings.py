@@ -133,6 +133,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'https://storage.googleapis.com/portfolio-hosokawalab/'
+STATIC_URL = 'https://storage.googleapis.com/portfolio-hosokawalab/'
 MDEDITOR_CONFIGS={
     'default':{
         'language':'en',
