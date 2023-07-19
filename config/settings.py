@@ -124,6 +124,8 @@ SPECTACULAR_SETTINGS = {
     'VERSION': '1.0.0',
 }
 
+GS_QUERYSTRING_AUTH = False
+
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
 STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
