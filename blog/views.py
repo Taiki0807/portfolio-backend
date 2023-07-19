@@ -58,6 +58,6 @@ class ImageRegisterAPIView(APIView):
     parser_classes = [FormParser, MultiPartParser]
 
     def post(self, request, *args, **kwargs):
-        file = request.data["image"]
+        file = request.data["editormd-image-file"]
         object_url = upload(file)
-        return Response({"image_code": f"![]({object_url})"}, status.HTTP_201_CREATED)
+        return Response({'success': 1,'message': "成功",'url': object_url}, status.HTTP_201_CREATED)

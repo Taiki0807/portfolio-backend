@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+from blog.views import ImageRegisterAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -12,6 +13,7 @@ urlpatterns = [
     path('api/v1/',include('apiv1.urls')),
     path('api/blog/',include('blog.urls')),
     path('api/works/',include('works.urls')),
+    path('mdeditor/uploads/', ImageRegisterAPIView.as_view(), name="imageRegister"),
     path('mdeditor/', include('mdeditor.urls'))
 ]
 urlpatterns += static("/media/", document_root=settings.MEDIA_ROOT)
