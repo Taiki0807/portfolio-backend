@@ -9,7 +9,7 @@ djangorestframework = "*"
 psycopg2-binary = "*"
 drf-spectacular = "*"
 pillow = "*"
-django-mdeditor = "*"
+django-mdeditor = {editable = true, ref = "feature/csrf-token-manipulation", git = "https://github.com/Taiki0807/django-mdeditor.git"}
 django-storages = "*"
 google-cloud-storage = "*"
 
