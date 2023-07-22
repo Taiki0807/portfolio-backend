@@ -4,7 +4,7 @@ cachetools==5.3.1
 certifi==2023.5.7
 charset-normalizer==3.2.0
 Django==4.2.3
--e git+https://github.com/Taiki0807/django-mdeditor.git@b11a1f08415de452817af1c3dc2c7a753a00097e#egg=django_mdeditor
+django-mdeditor @ git+https://github.com/Taiki0807/django-mdeditor.git@b11a1f08415de452817af1c3dc2c7a753a00097e
 django-storages==1.13.2
 djangorestframework==3.14.0
 drf-spectacular==0.26.3

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "48d6dd4a7fc53fa6219fa66dfa1e63ccf3355f0c7b5268e813c35123bbeae7ff"
+            "sha256": "982eff2d9ddbd97c9ea164ed3adab5553ccc3ca5a2aefebce03bb949eff35d33"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -138,7 +138,6 @@
             "version": "==4.2.3"
         },
         "django-mdeditor": {
-            "editable": true,
             "git": "https://github.com/Taiki0807/django-mdeditor.git",
             "hashes": [
                 "sha256:d1f3b735b6202b8820f10e024a5aa28c5b948897ee7a8dbb84558df75339827e"
