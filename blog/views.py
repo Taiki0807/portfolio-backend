@@ -5,7 +5,7 @@ from .serializers import CategorySerializer, PostSerializer, SimplePostSerialize
 from django.core.files.storage import FileSystemStorage
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.views import APIView
-from rest_framework.response import Response
+from django.http import JsonResponse
 from google.cloud import storage
 import random,string
 import os
@@ -60,4 +60,4 @@ class ImageRegisterAPIView(APIView):
     def post(self, request, *args, **kwargs):
         file = request.data["editormd-image-file"]
         object_url = upload(file)
-        return Response({'success': 1,'message': "成功",'url': object_url}, status.HTTP_201_CREATED)
+        return JsonResponse({'success': 1,'message': "成功",'url': object_url})
