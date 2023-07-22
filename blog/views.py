@@ -12,6 +12,8 @@ import os
 from datetime import datetime
 from django.utils import timezone
 from google.oauth2 import service_account
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 
 #google cloud storageのクライアントインスタンスを作成
 key_path = './portfolio-377405-3a43641d221e.json'
@@ -32,8 +34,12 @@ class TagList(generics.ListAPIView):
     serializer_class = TagSerializer
 
 class PostList(generics.ListAPIView):
-    queryset = Post.objects.all()
+    queryset = Post.objects.order_by('-created_at')  # '-' indicates descending order
     serializer_class = SimplePostSerializer
+
+    @method_decorator(cache_page(60*15))  # Cache the response for 15 minutes (optional)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
 
 class PostDetail(generics.RetrieveAPIView):
